@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		GumballMachine gumballMachine = new GumballMachine(5);
-
+//测试一下
 		System.out.println(gumballMachine);
 
 		gumballMachine.insertQuarter( 25 );
