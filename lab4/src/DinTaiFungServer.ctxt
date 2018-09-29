@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=DinTaiFungServer
+comment1.params=
+comment1.target=DinTaiFungServer()
+comment2.params=
+comment2.target=DinTaiFungServer\ getInstance()
+comment3.params=p
+comment3.target=void\ addCustomer(Customer)
+comment4.params=seatSize
+comment4.target=void\ seatAvailable(int)
+comment5.params=p\ message
+comment5.target=void\ getCustomerReply(Customer,\ java.lang.String)
+numComments=6
