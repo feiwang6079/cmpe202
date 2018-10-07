@@ -44,8 +44,8 @@ COLLABORATORS:
 Customer
 DinTaiFungServer
 
-I chose the singleton Pattern in the design.
-DinTaiFungServer and MessageServer play Singleton in the Pattern,
-Because DinTaiFungServer need to maintain one list of customers. Even though each customer could call the methods added to wait list, it is only an object of DinTaiFungServer to handle. In reality, only one message server could handle the function of sending message, so MessageServer must be designed as a singleton.
+I chose the singleton Pattern and Chain of Responsibility in the design.
+DinTaiFungServer and MessageServer play Singleton in the Pattern, because DinTaiFungServer need to maintain three list of customers. Even though each customer could call the methods added to wait list, it is only an object of DinTaiFungServer to handle. In reality, only one message server could handle the function of sending message, so MessageServer must be designed as a singleton.
+When table is ready, the custom get the message. If they choose to leave, the next custom will get the message and make a choice. As long as any customer agrees, no more information will be sent to the next customer. So, it's appropriate to use  Chain of Responsibility.
 
 
