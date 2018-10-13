@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="lab1/gumball-java-pattern"/>
+	<classpathentry kind="src" path="lab1/gumball-java-typical"/>
+	<classpathentry kind="src" path="lab4/src"/>
+	<classpathentry kind="output" path="lab4/bin"/>
+</classpath>
