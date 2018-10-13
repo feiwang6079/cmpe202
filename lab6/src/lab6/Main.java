@@ -1,5 +1,7 @@
 package lab6;
 
+import java.text.DecimalFormat;
+
 public class Main {
 
 	public Main() {
@@ -8,22 +10,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		Component order = new Composite("FIVE GUYS", 0);
-		
-		Component burger = new Composite("LBB", 5.59);
-		burger.addChild(new Leaf("{{{{BACON}}}}", 0) );
-		burger.addChild(new Leaf("LETTUCE", 0) );
-		burger.addChild(new Leaf("TOMATO", 0) );
-		burger.addChild(new Leaf("->|G ONION", 0) );
-		burger.addChild(new Leaf("->|JALA Grilled", 0) );
-		
-		order.addChild(burger);
-		order.addChild(new Leaf("LTL CAJ", 2.79));
-		
-		order.printDescription();
 
+		
+		Component order = new Composite( "         FIVE GUYS" ) ;
+		
+        CustomBurger customBurger = new CustomBurger("LBB", 5.59) ;
+        Bacon b = new Bacon("BACON");
+        Lettuce l = new Lettuce("LETTUCE");
+        Onion o = new Onion("Onion");
+        customBurger.addChild(b);
+        customBurger.addChild(l);
+        customBurger.addChild(o);
 
+        LtlCaj lt = new LtlCaj("LTL CAJ", 2.79);
+        order.addChild(customBurger);
+        order.addChild(lt);
+        order.printDescription();
+        
+        ((PriceDecorator)order).wrapDecorator(customBurger);
+        customBurger.wrapDecorator(lt);
+        double price = ((PriceDecorator)order).getPrice();
+        DecimalFormat fmt = new DecimalFormat("0.00");
+
+        System.out.println("\nall money                     " + fmt.format(price));
 	}
 
 }
