@@ -27,8 +27,13 @@ public class Leaf implements Component, PriceDecorator{
 	@Override
 	public void printDescription() {
 		// TODO Auto-generated method stub
-		
+		System.out.println( " " + description) ;
+
 	}
+	
+    public String getDescription() {
+    	return description;
+    }
 
 	@Override
 	public void addChild(Component c) {
@@ -47,6 +52,16 @@ public class Leaf implements Component, PriceDecorator{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public int getChildCount() {
+		return 1;
+	}
+	
+	public void setStrategy(SortingStrategy s) {
+		return;
+	}
+ 
 	
 	   public double getPrice() {
 	        if (wrapped == null )

@@ -17,22 +17,29 @@ public class Main {
         CustomBurger customBurger = new CustomBurger("LBB", 5.59) ;
         Bacon b = new Bacon("BACON");
         Lettuce l = new Lettuce("LETTUCE");
+        Tomato t = new Tomato("TOMATO");
         Onion o = new Onion("Onion");
+        Jala j = new Jala("JALA Grilled");
         customBurger.addChild(b);
         customBurger.addChild(l);
+        customBurger.addChild(t);
         customBurger.addChild(o);
+        customBurger.addChild(j);
+
 
         LtlCaj lt = new LtlCaj("LTL CAJ", 2.79);
         order.addChild(customBurger);
         order.addChild(lt);
+        
+        order.setStrategy(new ReceiptSort());
         order.printDescription();
         
         ((PriceDecorator)order).wrapDecorator(customBurger);
         customBurger.wrapDecorator(lt);
-        double price = ((PriceDecorator)order).getPrice();
-        DecimalFormat fmt = new DecimalFormat("0.00");
+        
+        order.setStrategy(new PackingSort());
+        order.printDescription();
 
-        System.out.println("\nall money                     " + fmt.format(price));
 	}
 
 }
