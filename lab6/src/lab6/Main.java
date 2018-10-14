@@ -26,19 +26,20 @@ public class Main {
         customBurger.addChild(o);
         customBurger.addChild(j);
 
-
         LtlCaj lt = new LtlCaj("LTL CAJ", 2.79);
         order.addChild(customBurger);
         order.addChild(lt);
         
-        order.setStrategy(new ReceiptSort());
-        order.printDescription();
-        
         ((PriceDecorator)order).wrapDecorator(customBurger);
         customBurger.wrapDecorator(lt);
         
+        SortingStrategy strategy = new ReceiptSort();
+        order.setStrategy(strategy);
+        order.printDescription(strategy.showMoney());
+        
+        strategy = new PackingSort();
         order.setStrategy(new PackingSort());
-        order.printDescription();
+        order.printDescription(strategy.showMoney());
 
 	}
 

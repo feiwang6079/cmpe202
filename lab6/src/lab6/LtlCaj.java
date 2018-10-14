@@ -14,11 +14,17 @@ public class LtlCaj extends Leaf {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void printDescription() {
+	public void printDescription(boolean showMoney) {
 	
-
 		DecimalFormat fmt = new DecimalFormat("0.00");
-		System.out.println(description + "                       " + fmt.format(price) ) ;
+		if(showMoney)
+		{
+			System.out.println(description + "                       " + fmt.format(price) ) ;
+		}
+		else
+		{
+			System.out.println(description);
+		}
 		
 	}
 

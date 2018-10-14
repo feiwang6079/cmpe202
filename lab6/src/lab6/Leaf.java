@@ -25,7 +25,7 @@ public class Leaf implements Component, PriceDecorator{
 	   }
 
 	@Override
-	public void printDescription() {
+	public void printDescription(boolean showMoney) {
 		// TODO Auto-generated method stub
 		System.out.println( " " + description) ;
 

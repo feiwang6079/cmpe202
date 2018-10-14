@@ -1,7 +1,7 @@
 package lab6;
 
 public interface Component {
-    void printDescription() ;
+    void printDescription(boolean showMoney) ;
     void addChild(Component c);
     void removeChild(Component c);
     int getChildCount();

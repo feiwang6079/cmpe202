@@ -28,29 +28,31 @@ public class Composite implements Component, PriceDecorator {
 	}
 
 	@Override
-	public void printDescription() {
+	public void printDescription(boolean showMoney) {
 		// TODO Auto-generated method stub
 				
-		StringBuffer s = new StringBuffer();
-		if(strategy.showMoney())
+		data = strategy.sort(components);
+		DecimalFormat fmt = new DecimalFormat("0.00");
+		
+		if(showMoney)
 		{
+			System.out.println("    FIVE GUYS Receipt");
+
 			for (Component obj  : data)
 			{
-				s.append(obj.getDescription() + "\n");
+				obj.printDescription(showMoney);
 			}
-			
-	        DecimalFormat fmt = new DecimalFormat("0.00");
-	        System.out.println("Total:                     " + fmt.format(this.getPrice()));
+			System.out.println("\nTotal:                        "+ fmt.format(getPrice()) + "\n\n");
 		}
 		else
 		{
+			System.out.println("    FIVE GUYS Packing");
 			for (Component obj  : data)
 			{
-				s.append(obj.getDescription() + "\n");
+				obj.printDescription(showMoney);
 			}
 		}
 		
-		System.out.println(s);
 	}
 	
     public String getDescription() {
@@ -101,9 +103,6 @@ public class Composite implements Component, PriceDecorator {
 	    }
 	
 	public void setStrategy(SortingStrategy s) {
-		
 		strategy = s;
-		data = strategy.sort(components);
-
 	}
 }
