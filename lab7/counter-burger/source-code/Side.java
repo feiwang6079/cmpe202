@@ -1,19 +1,20 @@
-public class Sauce extends LeafDecorator
+
+public class Side extends LeafDecorator 
 {
-    private String[] options ;
+ private String[] options ;
     
     
-    public Sauce( String d )
+    public Side( String d )
     {
         super(d) ;
     }
     
-    // 1 sauce free, extra +.5
+    // 1.5 each cheese 
     public void setOptions( String[] options )
     {
         this.options = options ;
-        if ( options.length > 1 )
-            this.price += (options.length-1) * 0.5 ;
+        if ( options.length > 0 )
+            this.price += options.length * 3.00 ;
     }
     
     public String getDescription() 
@@ -26,5 +27,4 @@ public class Sauce extends LeafDecorator
         }        
         return desc ;
     }
-    
 }

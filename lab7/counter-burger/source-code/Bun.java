@@ -1,19 +1,24 @@
-public class Sauce extends LeafDecorator
+
+public class Bun extends LeafDecorator 
 {
     private String[] options ;
     
     
-    public Sauce( String d )
+    public Bun( String d )
     {
         super(d) ;
     }
     
-    // 1 sauce free, extra +.5
+    // 1.5 each cheese 
     public void setOptions( String[] options )
     {
         this.options = options ;
-        if ( options.length > 1 )
-            this.price += (options.length-1) * 0.5 ;
+        for ( int i = 0; i<options.length; i++ )
+        {
+            if ( "Gluten-Free Bun".equals(options[i]) ) this.price += 1.00 ;
+            if ( "Hawaiian Bun".equals(options[i]) ) this.price += 1.00 ;
+            if ( "Pretzel Bun".equals(options[i]) ) this.price += 0.50 ;
+        }
     }
     
     public String getDescription() 
@@ -26,5 +31,4 @@ public class Sauce extends LeafDecorator
         }        
         return desc ;
     }
-    
 }
