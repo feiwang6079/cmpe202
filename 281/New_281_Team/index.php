@@ -18,9 +18,9 @@
 <tr>
 <td class="list">
 <b>My Building</b><br>
-<a href="about.php">Building IoT</a><br>
-<a href="products.php">Status Report</a><br>
-<a href="news.php">Map View</a><br>
+<a href="index.php">Building IoT</a><br>
+<a href="index.php">Status Report</a><br>
+<a href="index.php">Map View</a><br>
 </td>
 <td class="content">
 <br><br>
@@ -34,7 +34,7 @@ Building Address: 979 Melbourne Blvd <br>
 
 <tr>
 <td>
-<form action="loginResult.php" method="post">Smart Light
+<form action="add.php" method="post">Smart Light
 <input type="submit" value="Add">
 </form>
 </td>
@@ -83,11 +83,11 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo '<td>' . $row['sensor_type'] . '</td>';
     echo '<td>' . $row['time'] . '</td>';
     echo '<td>' . $row['time'] . '</td>';
-    echo '<td><a href="edit.php?id=' . $row['sensor_id'] . '">update</a></td>';
+    echo '<td><a href="update.php?id=' . $row['sensor_id'] . '">update</a></td>';
     echo '<td><a href="delete.php?id=' . $row['sensor_id'] . '">delete</a></td>';
     echo '</tr>';
 }
-echo '<tr><td colspan="6"><a href="index.php?page=1">Main Page</a>  <a href="index.php?page=' . ($page - 1) . '">Previous Page</a>   <a href="index.php?page=' . ($page + 1) . '">Next Page</a>  <a href="index.php?page=' . $total . '">Last Page</a>  Current Page ' . $page . 'Page  Total' . $total . 'Page </td></tr>';
+echo '<tr><td colspan="6"><a href="index.php?page=1">Main</a>  <a href="index.php?page=' . ($page - 1) . '">Previous</a>   <a href="index.php?page=' . ($page + 1) . '">Next</a>  <a href="index.php?page=' . $total . '">Last</a>  Current ' . $page . 'Total' . $total . ' </td></tr>';
 echo '</table>'
 
 ?>
