@@ -1,9 +1,11 @@
 # lab9 Command Pattern
 
 Principle
+
 use method references for passing command objects to the invoker without having to create the Command instance
 
 Merit
+
 The original advantages are still preserved
 The code is a little bit more compact and less verbose
 
