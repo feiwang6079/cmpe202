@@ -1,6 +1,4 @@
-# lab9
-
-#Command Pattern
+# lab9 Command Pattern
 
 Principle
 use method references for passing command objects to the invoker without having to create the Command instance
