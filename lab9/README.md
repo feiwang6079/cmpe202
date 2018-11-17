@@ -11,7 +11,8 @@ The code is a little bit more compact and less verbose
 
 
 //before
-		 	    Kitchen kitchen = new Kitchen();
+		 	    
+		Kitchen kitchen = new Kitchen();
 	        Waiter waiter = new Waiter();
 	        
 	        BaseCommand beefRiceCommand = new BeefRiceCommand();
@@ -30,7 +31,8 @@ The code is a little bit more compact and less verbose
 	        waiter.placeOrder();
 
 //after 
-		      Kitchen kitchen = new Kitchen();
+		      
+		Kitchen kitchen = new Kitchen();
 	        Waiter waiter = new Waiter();
 	        
 	        waiter.setOrders(Kitchen::beefRice);
