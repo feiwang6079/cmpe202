@@ -21,8 +21,6 @@ public class Client {
 	        waiter.setOrders(beefRiceCommand);
 	        waiter.setOrders(beerBurgerCommand);
 	        waiter.setOrders(riceFlourCommand);
-	        waiter.setOrders(beefRiceCommand);
-	        waiter.setOrders(beefRiceCommand);
 	        
 	        waiter.placeOrder();
 	}
