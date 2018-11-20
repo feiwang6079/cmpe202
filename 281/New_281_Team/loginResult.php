@@ -36,7 +36,7 @@ if (mysqli_num_rows($result) > 0)
     
     if((strcmp($_POST["fname"],$user_name) == 0) && (strcmp($_POST["fpassword"],$user_password)==0))
     {
-        header("Location: index.php");
+        header("Location: mapselectbuilding.php");
         //确保重定向后，后续代码不会被执行
         exit;  
     }
