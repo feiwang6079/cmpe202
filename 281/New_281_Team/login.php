@@ -5,11 +5,11 @@
 <link rel="stylesheet" type="text/css" href="content.css">
 <title>Fei Wang</title> 
 </head>
-<body>
+<body background="image/b1.jpg">
 
 <table style="width:100%">
 <tr>
-<td colspan="2" style="background-color:#FFA500;">
+<td colspan="2">
 <h1 style = "text-align:center">Infrastructure Manager Login Page</h1>
 </td>
 </tr>
